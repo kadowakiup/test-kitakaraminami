@@ -1,0 +1,124 @@
+.footer {
+    padding-top: 40px;
+    border-top: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    &_left {
+        &_logo {
+            display: inline-block;
+            margin-bottom: 26px;
+            transition: .4s;
+            >img {
+                width: 220px;
+                height: auto;
+            }
+            &:hover {
+                opacity: 0.6;
+                transition: 0.3s;
+            }
+        }
+        &_link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: .4s;
+            &:hover {
+                transform: scale(1.04);
+                opacity: 0.8;
+                transition: .3s;
+            }
+            .arrow {
+                width: 9px;
+                height: 15px;
+                position: relative;
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: -50%;
+                    top: 50%;
+                    width: 10px;
+                    height: 10px;
+                    border-top: 1px solid #fff;
+                    border-right: 1px solid #fff;
+                    -webkit-transform: translateY(-50%) rotate(45deg);
+                    transform: translateY(-50%) rotate(45deg);
+                }
+            }
+            &_text {
+                font-size: 14px;
+            }
+        }
+    }
+    &_right {
+        &_list {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 60px;
+            font-style: 15px;
+            margin-bottom: 100px;
+            >li >a {
+                display: block;
+                transition: .4s;
+                &:hover {
+                    transform: scale(1.04);
+                    opacity: 0.8;
+                    transition: .3s;
+                }
+            }
+            &_contact {
+                >a {
+                    display: block;
+                    padding: 26px 38px;
+                    border: 1px solid #fff;
+                }
+            }
+        }
+        .copyright {
+            font-size: 13px;
+            text-align: end;
+        }
+    }
+}
+
+
+
+// モバイル版
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+        &_left {
+            &_logo {
+                margin-bottom: 20px;
+                >img {
+                    width: 180px;
+                }
+            }
+            &_link {
+                &_text {
+                    font-size: 13px;
+                }
+            }
+        }
+        &_right {
+            &_list {
+                justify-content: flex-start;
+                align-items: center;
+                gap: 40px;
+                font-style: 13px;
+                margin-bottom: 60px;
+                &_contact {
+                    padding: 13px 24px;
+                }
+            }
+            .copyright {
+                font-size: 13px;
+                text-align: center;
+            }
+        }
+    }
+}

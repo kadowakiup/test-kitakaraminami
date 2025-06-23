@@ -1,0 +1,128 @@
+/* メニューのスタイル */
+.header {
+    position: relative;
+    &_inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 220px;
+            height: auto;
+            >a {
+                display: block;
+                transition: 0.4s;
+                &:hover {
+                    opacity: 0.6;
+                    transition: 0.3s;
+                }
+            }
+        }
+        .menu {
+            display: none;
+        }
+        .nav {
+            &_pc {
+                display: flex;
+                gap: 60px;
+                >li {
+                    font-size: 18px;
+                    transition: 0.3s;
+                    >a {
+                        display: block;
+                        transition: 0.4s;
+                        &:hover {
+                            transform: scale(1.04);
+                            opacity: 0.8;
+                            transition: .3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// モバイル版
+@media (max-width: 768px) {
+    .header {
+        &_inner {
+            padding: 50px 40px;
+            .logo {
+                width: 180px;
+            }
+            /* ハンバーガーメニュー */
+            .hamburger {
+                width: 38px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                gap: 8px;
+                cursor: pointer;
+                z-index: 50;
+                span {
+                    display: block;
+                    height: 2px;
+                    width: 100%;
+                    background-color: #fff;
+                    transition: 0.4s;
+                    &:last-child {
+                        width: 25px;
+                    }
+                }
+                &.active {
+                    gap: 0px;
+                    span:nth-child(1) {
+                        transform: rotate(45deg) translate(0px, 2px);
+                    }
+                    span:nth-child(2) {
+                        width: 38px;
+                        transform: rotate(-45deg) translate(0px, -2px);
+                    }
+                }
+            }
+            // ハンバーガーメニュークリックしたら出てくるメニュー
+            .menu {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: -100%; /* 初期状態では画面の外に隠れている */
+                width: 100%;
+                height: 100vh;
+                background-color: rgba($color: #000000, $alpha: 0.8);
+                color: #fff;
+                transition: right 0.3s ease; /* スライドインのアニメーション */
+                padding: 20px 60px;
+                box-sizing: border-box;
+                z-index: 40;
+                /* メニューリストのスタイル */
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                    margin-top: 80px;
+                    li {
+                        padding: 20px 0;
+                        a {
+                            font-size: 18px;
+                            text-decoration: none;
+                            display: block;
+                        }
+                    }
+                }
+                &.open {
+                    right: 0;
+                }
+            }
+            .nav {
+                display: none;
+            }
+        }
+    }
+}
