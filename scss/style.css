@@ -531,11 +531,11 @@ img {
     justify-content: flex-start;
     align-items: center;
     gap: 40px;
-    font-style: 13px;
+    font-size: 13px;
     margin-bottom: 60px;
   }
-  .footer_right_list_contact {
-    padding: 13px 24px;
+  .footer_right_list > li > a {
+    padding: 20px 32px;
   }
   .footer_right .copyright {
     font-size: 13px;
